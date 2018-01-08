@@ -1,7 +1,7 @@
 from django.conf.urls import url
-from apps.blog.views import blog_home
+from apps.blog.views import contact_home
 
 
 urlpatterns = [
-    url(r'^$', blog_home, name='contact')
+    url(r'^$', contact_home, name='contact')
 ]

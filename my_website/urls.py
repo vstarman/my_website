@@ -22,11 +22,11 @@ urlpatterns = [
     # 博客app
     url(r'^blog/', include('blog.urls', namespace='blog')),
     # # 首页app
-    # url(r'^home/', include('home.urls', namespace='home')),
-    # # 文件app
-    # url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
-    # # 更多详情app
-    # url(r'^about/', include('about.urls', namespace='about')),
-    # # 联系地址app
-    # url(r'^contact/', include('contact.urls', namespace='contact')),
+    url(r'^home/', include('home.urls', namespace='home')),
+    # 文件app
+    url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
+    # 更多详情app
+    url(r'^about/', include('about.urls', namespace='about')),
+    # 联系地址app
+    url(r'^contact/', include('contact.urls', namespace='contact')),
 ]
