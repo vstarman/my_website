@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from apps.blog.views import portfolio_home
+from apps.portfolio.views import portfolio_home
 
 
 urlpatterns = [
