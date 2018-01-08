@@ -19,9 +19,11 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    # 富文本编辑器
+    url(r'^tinymce/', include('tinymce.urls')),
     # 博客app
     url(r'^blog/', include('blog.urls', namespace='blog')),
-    # # 首页app
+    # 首页app
     url(r'^home/', include('home.urls', namespace='home')),
     # 文件app
     url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
