@@ -5,9 +5,8 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 {% load staticfiles %}
-
+{#TODO fix the bug#}
 {# 网页头信息 #}
-{% block header %}
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +28,7 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="{% static 'favicon.ico' %}">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
@@ -43,6 +42,8 @@
 	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
 
 	<!-- Modernizr JS -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
@@ -64,7 +65,7 @@
                         <li><a href="{% url 'blog:blog' %}">Blog</a></li>
                         <li><a href="{% url 'portfolio:portfolio' %}">Portfolio</a></li>
                         <li><a href="{% url 'about:about' %}">About</a></li>
-                        <li class="fh5co-active"><a href="contact.html">Contact</a></li>
+                        <li class="fh5co-active"><a href="{% url 'contact:contact' %}">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -80,13 +81,13 @@
 
             </aside>
 
-{% endblock %}
 
 {# 网页主体内容块 #}
 {% block body %}{% endblock %}
 
 {# 网页底部引入文件块 #}
-{% block bottom %}
+    </div>
+
 	<!-- jQuery -->
 	<script src="{% static 'js/jquery.min.js' %}"></script>
 	<!-- jQuery Easing -->
@@ -104,4 +105,3 @@
 
 	</body>
 </html>
-{% endblock %}

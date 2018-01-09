@@ -1,16 +1,13 @@
 {# 关于网站 #}
 {% extends 'base.html' %}
 {% load staticfiles %}
-
 {% block title %}About{% endblock %}
-
 {% block body %}
-
-		<div id="fh5co-main">
+    <div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/img_bg_1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+						<img class="img-responsive" src="{% static 'images/img_bg_1.jpg' %}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 					</div>
 					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 						<h2 class="fh5co-heading">About Company</h2>
@@ -86,6 +83,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
 {% endblock %}
 
