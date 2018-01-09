@@ -9,18 +9,20 @@ class ArticleInfo(BaseModel):
         title:标题
         author:作者
         img_url:首页图片链接
+        content_url:文章原始链接
         page_view:浏览量
         like_num:喜欢数量
         abstract:文章摘要
-        label_id:标签外键
+        label:标签
     """
     title = models.CharField(max_length=40, verbose_name='标题')
-    author = models.CharField(max_length=20, verbose_name='作者')
+    author = models.CharField(max_length=20, default='', verbose_name='作者')
     img_url = models.CharField(max_length=256, verbose_name='首页图片链接')
+    content_url = models.CharField(max_length=256, verbose_name='文章原始链接')
     page_view = models.IntegerField(default=0, verbose_name='浏览量')
     like_num = models.IntegerField(default=0, verbose_name='喜欢数量')
-    abstract = models.CharField(max_length=256, verbose_name='文章摘要')
-    label = models.CharField(max_length=40, verbose_name='标签')
+    abstract = models.CharField(max_length=500, verbose_name='文章摘要')
+    label = models.CharField(max_length=40, default='', verbose_name='标签')
 
     class Meta:
         db_table = 'article_info'
@@ -28,7 +30,7 @@ class ArticleInfo(BaseModel):
         verbose_name_plural = verbose_name
 
 
-class ArticleContent(BaseModel):
+class ArticleContent(models.Model):
     """文章详情内容
         article_id:文章信息外键约束
         content:文本内容
@@ -43,10 +45,11 @@ class ArticleContent(BaseModel):
 
 
 class ArticleComment(BaseModel):
-    """文章评论(以后存到redis中)
+    """文章评论
         content_id:文章id
         comment:评论
     """
+    # TODO (将评论保存到redis中)
     content_id = models.ForeignKey('ArticleContent', verbose_name='文章评论')
     comment = models.CharField(max_length=500, verbose_name='文章评论')
 
