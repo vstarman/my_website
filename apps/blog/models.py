@@ -26,7 +26,7 @@ class ArticleInfo(BaseModel):
 
     class Meta:
         db_table = 'article_info'
-        verbose_name = '文章列表页信息'
+        verbose_name = '文章列表页'
         verbose_name_plural = verbose_name
 
 
