@@ -7,5 +7,11 @@ from apps.blog.models import ArticleInfo
 class BlogHomeView(View):
     """博客主页(列表页)"""
     def get(self, request):
-        return render(request, 'blog.html')
+        # 获取列表也数据,展示
+        article_list = ArticleInfo.objects.all()[:12]
+        # 组织模板
+        context = {
+            'article_list': article_list
+        }
+        return render(request, 'blog.html', context)
 
