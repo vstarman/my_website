@@ -39,11 +39,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',       # 富文本编辑器
-    'apps.blog',
+    'apps.user',     # 用户模块
+    'apps.blog',     # 博客模块
     'apps.about',
     'apps.contact',
     'apps.home',
     'apps.portfolio',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,7 +94,8 @@ DATABASES = {
     }
 }
 
-
+# 使用Django的认证系统的模型类
+AUTH_USER_MODEL = 'user.User'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 

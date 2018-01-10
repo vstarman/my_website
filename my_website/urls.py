@@ -18,17 +18,12 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    # 富文本编辑器
-    url(r'^tinymce/', include('tinymce.urls')),
-    # 博客app
-    url(r'^blog/', include('blog.urls', namespace='blog')),
-    # 首页app
-    url(r'^home/', include('home.urls', namespace='home')),
-    # 文件app
-    url(r'^portfolio/', include('portfolio.urls', namespace='portfolio')),
-    # 更多详情app
-    url(r'^about/', include('about.urls', namespace='about')),
-    # 联系地址app
-    url(r'^contact/', include('contact.urls', namespace='contact')),
+    url(r'^admin/', include(admin.site.urls)),    # 富文本编辑器
+    url(r'^tinymce/', include('tinymce.urls')),    # 博客
+    url(r'^tinymce/', include('apps.user.urls', namespace='user')),    # 用户
+    url(r'^blog/', include('apps.blog.urls', namespace='blog')),    # 首页
+    url(r'^home/', include('apps.home.urls', namespace='home')),    # 文件
+    url(r'^portfolio/', include('apps.portfolio.urls', namespace='portfolio')),    # 更多详情
+    url(r'^about/', include('apps.about.urls', namespace='about')),    # 联系地址
+    url(r'^contact/', include('apps.contact.urls', namespace='contact')),
 ]
