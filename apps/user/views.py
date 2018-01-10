@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.views.generic import View
-from apps.blog.models import ArticleInfo
 
 
 # /blog/

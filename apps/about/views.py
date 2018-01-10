@@ -7,7 +7,7 @@ def blog_home(request):
 
 
 def index_home(request):
-    return render(request, 'indexhtml')
+    return render(request, 'index.html')
 
 
 def about_home(request):

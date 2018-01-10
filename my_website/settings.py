@@ -38,13 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tinymce',       # 富文本编辑器
-    'apps.user',     # 用户模块
-    'apps.blog',     # 博客模块
-    'apps.about',
-    'apps.contact',
-    'apps.home',
-    'apps.portfolio',
+    'tinymce',          # 富文本编辑器
+    'apps.user',        # 用户模块
+    'apps.blog',        # 博客模块
+    'apps.about',       # 更多模块
+    'apps.contact',     # 联系信息模块
+    'apps.portfolio',   # 文件模块
 
 )
 
