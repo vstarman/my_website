@@ -137,5 +137,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATIC_ROOT = '/home/python/Desktop/Django_obj/my_website/static'
 
 CRONJOBS = [
-    ('*/5 * * * *', 'apps.about.corn.test','>>/home/test.log')
+    # （' 0 0 * * 0 '，' django.core.management.call_command '，[ ' dumpdata '，' auth ' ]，{ ' indent '：4 }，
+    # ' > /home/john/backups/last_sunday_auth_backup.json '）,
+    ('*/1 * * * *', 'apps.about.cron.test', '>> /home/python/Desktop/Django_obj/my_website/static/test.log'),
 ]
