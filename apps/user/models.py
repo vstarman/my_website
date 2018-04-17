@@ -6,6 +6,8 @@ from tinymce.models import HTMLField
 
 # Create your models here.
 class User(AbstractUser, BaseModel):
+    phone = models.CharField(max_length=11, default='', verbose_name='手机号')
+
     class Meta:
         db_table = 'auth_user'
         verbose_name = '用户'

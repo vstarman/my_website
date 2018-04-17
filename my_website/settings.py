@@ -26,7 +26,7 @@ SECRET_KEY = 'zm#jth875760oha1*9hut21)n^exqf@z5hwlewf#bw2m1w$dwi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'apps.contact',     # 联系信息模块
     'apps.portfolio',   # 文件模块
 
+    'django_crontab',   # 定时任务模块
 )
 
 MIDDLEWARE_CLASSES = (
@@ -93,6 +94,18 @@ DATABASES = {
     }
 }
 
+# # 缓存配置
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://127.0.0.1:6379/1",
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#             "PASSWORD": "mysecret"
+#         }
+#     }
+# }
+
 # 使用Django的认证系统的模型类
 AUTH_USER_MODEL = 'user.User'
 # Internationalization
@@ -122,3 +135,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # 设置收集静态文件的路径
 # STATIC_ROOT = '/home/python/Desktop/Django_obj/my_website/static'
+
+CRONJOBS = [
+    ('*/5 * * * *', 'apps.about.corn.test','>>/home/test.log')
+]
